@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The page is rendered Test so that everything renders properly 1`] = `
+<div
+  class="home"
+>
+  <p
+    class="test"
+  >
+    TEST THAT EVERYTHING WORKS
+  </p>
+</div>
+`;
