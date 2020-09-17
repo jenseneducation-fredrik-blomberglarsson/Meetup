@@ -11,3 +11,5 @@ function getMeetups() {
     }
   ]
 }
+
+export { getMeetups }

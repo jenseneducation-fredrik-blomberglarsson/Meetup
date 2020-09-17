@@ -9,7 +9,7 @@ localVue.use(Vuex);
 describe('The page is rendered', () => {
   // Need to mock MeetupItem here when i've figured out its data
   const mockedMeetupItem = {
-    id: '01',
+    id: '1',
     title: 'Tech Meetup',
     desc: 'Learn front-end development with experienced developers',
     date: 'WED, SEP 23 6:30 PM',
