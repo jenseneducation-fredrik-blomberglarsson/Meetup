@@ -12,7 +12,8 @@ describe('The page is rendered', () => {
     id: '01',
     title: 'Tech Meetup',
     desc: 'Learn front-end development with experienced developers',
-    date: 'WED, SEP 23 6:30 PM'
+    date: 'WED, SEP 23 6:30 PM',
+    organizer: 'Stockholm WebNow'
   };
 
   test('Test so that everything renders properly', async () => {
@@ -32,10 +33,12 @@ describe('The page is rendered', () => {
     const meetupTitle = wrapper.find('.meetupTitle');
     const meetupDesc = wrapper.find('.meetupDesc');
     const meetupDate = wrapper.find('.meetupDate');
+    const meetupOrganizer = wrapper.find('.meetupOrganizer');
 
     expect(meetupTitle.text()).toContain(mockedMeetupItem.title);
     expect(meetupDesc.text()).toContain(mockedMeetupItem.desc);
     expect(meetupDate.text()).toContain(mockedMeetupItem.date);
+    expect(meetupOrganizer.text()).toContain(mockedMeetupItem.organizer);
   });
 
   test('Check if joinMeetup is displayed if joinMeetupToggle is false', async () => {
