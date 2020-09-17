@@ -13,6 +13,7 @@ describe('The page is rendered', () => {
     title: 'Tech Meetup',
     desc: 'Learn front-end development with experienced developers',
     date: 'WED, SEP 23 6:30 PM',
+    location: 'Stockholmsmässan',
     organizer: 'Stockholm WebNow'
   };
 
@@ -33,11 +34,13 @@ describe('The page is rendered', () => {
     const meetupTitle = wrapper.find('.meetupTitle');
     const meetupDesc = wrapper.find('.meetupDesc');
     const meetupDate = wrapper.find('.meetupDate');
+    const meetupLocation = wrapper.find('.meetupLocation');
     const meetupOrganizer = wrapper.find('.meetupOrganizer');
 
     expect(meetupTitle.text()).toContain(mockedMeetupItem.title);
     expect(meetupDesc.text()).toContain(mockedMeetupItem.desc);
     expect(meetupDate.text()).toContain(mockedMeetupItem.date);
+    expect(meetupLocation.text()).toContain(mockedMeetupItem.location);
     expect(meetupOrganizer.text()).toContain(mockedMeetupItem.organizer);
   });
 
