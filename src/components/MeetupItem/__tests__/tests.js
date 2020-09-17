@@ -30,12 +30,12 @@ describe('The page is rendered', () => {
     });
 
     const meetupTitle = wrapper.find('.meetupTitle');
-    const meetupDesc = wrapperf.ind('.meetupDesc');
+    const meetupDesc = wrapper.find('.meetupDesc');
     const meetupDate = wrapper.find('.meetupDate');
 
-    expect(meetupTitle()).toContain(mockedMeetupItem.title);
-    expect(meetupDesc()).toContain(mockedMeetupItem.desc);
-    expect(meetupDate()).toContain(mockedMeetupItem.date);
+    expect(meetupTitle.text()).toContain(mockedMeetupItem.title);
+    expect(meetupDesc.text()).toContain(mockedMeetupItem.desc);
+    expect(meetupDate.text()).toContain(mockedMeetupItem.date);
   });
 
   test('Check if joinMeetup is displayed if joinMeetupToggle is false', async () => {
