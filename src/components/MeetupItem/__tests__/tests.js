@@ -7,8 +7,131 @@ const localVue = createLocalVue();
 localVue.use(Vuex);
 
 describe('The page is rendered', () => {
+  // Need to mock MeetupItem here when i've figured out its data
+  const mockedMeetupItem = {
+    id: '01',
+    title: 'Tech Meetup',
+    desc: 'Learn front-end development with experienced developers',
+    date: 'WED, SEP 23 6:30 PM'
+  };
+
   test('Test so that everything renders properly', async () => {
     const wrapper = shallowMount(MeetupItem, { store, localVue });
     expect(wrapper.element).toMatchSnapshot();
+  });
+
+  test('Test to check that output is correct on MeetupItem', async () => {
+    const wrapper = shallowMount(MeetupItem, {
+      store,
+      localVue,
+      propsData: {
+        mockedMeetupItem
+      }
+    });
+
+    const meetupTitle = wrapper.find('.meetupTitle');
+    const meetupDesc = wrapperf.ind('.meetupDesc');
+    const meetupDate = wrapper.find('.meetupDate');
+
+    expect(meetupTitle()).toContain(mockedMeetupItem.title);
+    expect(meetupDesc()).toContain(mockedMeetupItem.desc);
+    expect(meetupDate()).toContain(mockedMeetupItem.date);
+  });
+
+  test('Check if joinMeetup is displayed if joinMeetupToggle is false', async () => {
+    const wrapper = shallowMount(MeetupItem, {
+      store,
+      localVue,
+      propsData: {
+        mockedMeetupItem
+      }
+    });
+
+    const button = wrapper.find('.joinMeetupBtn');
+
+    expect(store.state.joinMeetupToggle).toBe(false);
+    expect(button.exists()).toBe(true);
+  })
+
+  test('Check if leaveMeetup is displayed if joinMeetupToggle is true', async () => {
+    const wrapper = shallowMount(MeetupItem, {
+      store,
+      localVue,
+      propsData: {
+        mockedMeetupItem
+      }
+    });
+    store.state.joinMeetupToggle = true;
+    await wrapper.vm.$nextTick();
+    const button = wrapper.find('.joinMeetupBtn');
+
+    expect(store.state.joinMeetupToggle).toBe(true);
+    expect(button.exists()).toBe(true);
+  })
+
+  test('Check that joinMeetup is called on button click', async () => {
+    const state = {
+      isMeetupToggleActive: false
+    }
+
+    const actions = {
+      joinMeetup: jest.fn()
+    };
+    const getters = {
+      getMeetupToggle: state => {
+        return state.isMeetupToggleActive;
+      }
+    };
+    const store = new Vuex.Store({
+      actions,
+      getters,
+      state
+    });
+
+    const wrapper = shallowMount(MeetupItem, {
+      store,
+      localVue,
+      propsData: {
+        mockedMeetupItem
+      }
+    });
+
+    const button = wrapper.find('.joinMeetupBtn');
+    await button.trigger('click');
+    await localVue.nextTick();
+    expect(actions.joinMeetup).toHaveBeenCalled();
+  })
+
+  test('Check that leaveMeetup is called on button click', async () => {
+    const state = {
+      isMeetupToggleActive: true
+    }
+
+    const actions = {
+      leaveMeetup: jest.fn()
+    };
+    const getters = {
+      getMeetupToggle: state => {
+        return state.isMeetupToggleActive;
+      }
+    };
+    const store = new Vuex.Store({
+      actions,
+      getters,
+      state
+    });
+
+    const wrapper = shallowMount(MeetupItem, {
+      store,
+      localVue,
+      propsData: {
+        mockedMeetupItem
+      }
+    });
+
+    const button = wrapper.find('.joinMeetupBtn');
+    await button.trigger('click');
+    await localVue.nextTick();
+    expect(actions.leaveMeetup).toHaveBeenCalled();
   })
 })
