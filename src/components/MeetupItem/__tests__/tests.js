@@ -7,13 +7,14 @@ const localVue = createLocalVue();
 localVue.use(Vuex);
 
 describe('The page is rendered', () => {
-  // Need to mock MeetupItem here when i've figured out its data
+  // Mock meetupItem
   const mockedMeetupItem = {
     id: '1',
-    title: 'Tech Meetup',
+    category: 'Tech',
+    title: 'Learn front-end from scratch',
     desc: 'Learn front-end development with experienced developers',
     date: 'WED, SEP 23 6:30 PM',
-    location: 'Stockholmsmässan',
+    location: 'Online',
     organizer: 'Stockholm WebNow'
   };
 
@@ -31,12 +32,14 @@ describe('The page is rendered', () => {
       }
     });
 
+    const meetupCategory = wrapper.find('.meetupCategory');
     const meetupTitle = wrapper.find('.meetupTitle');
     const meetupDesc = wrapper.find('.meetupDesc');
     const meetupDate = wrapper.find('.meetupDate');
     const meetupLocation = wrapper.find('.meetupLocation');
     const meetupOrganizer = wrapper.find('.meetupOrganizer');
 
+    expect(meetupCategory.text()).toContain(mockedMeetupItem);
     expect(meetupTitle.text()).toContain(mockedMeetupItem.title);
     expect(meetupDesc.text()).toContain(mockedMeetupItem.desc);
     expect(meetupDate.text()).toContain(mockedMeetupItem.date);

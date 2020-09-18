@@ -8,6 +8,9 @@ Vue.use(Vuex)
 
 //Global state
 export default new Vuex.Store({
+  state: {
+    meetups: []
+  },
 
 
 

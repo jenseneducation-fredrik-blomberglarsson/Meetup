@@ -1,9 +1,18 @@
 <template>
-  <div class="meetups"></div>
+  <div class="meetups">
+    <h1>Upcoming Meetups</h1>
+    <MeetupList />
+  </div>
 </template>
 
 <script>
-export default {};
+import MeetupList from "@/components/MeetupList/MeetupList.vue";
+export default {
+  name: "Meetups",
+  components: {
+    MeetupList,
+  },
+};
 </script>
 
 <style>
