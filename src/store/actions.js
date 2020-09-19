@@ -4,7 +4,6 @@ const actions = {
   async fetchMeetups(context) {
     const data = await getMeetups();
     context.commit("setMeetups", data);
-    console.log(data);
   }
 }
 

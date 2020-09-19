@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name: "MeetupItem",
   props: { item: Object },
 };
 </script>

@@ -3,5 +3,30 @@
 exports[`The page is rendered Test so that everything renders properly 1`] = `
 <div
   class="header"
-/>
+>
+  <div
+    id="nav"
+  >
+    <router-link-stub
+      ariacurrentvalue="page"
+      class="router-link"
+      event="click"
+      tag="a"
+      to="/"
+    >
+      Home
+    </router-link-stub>
+    |
+    
+    <router-link-stub
+      ariacurrentvalue="page"
+      class="router-link"
+      event="click"
+      tag="a"
+      to="/meetups"
+    >
+      Upcoming Meetups
+    </router-link-stub>
+  </div>
+</div>
 `;

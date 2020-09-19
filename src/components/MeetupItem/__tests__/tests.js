@@ -8,7 +8,7 @@ localVue.use(Vuex);
 
 describe('The page is rendered', () => {
   // Mock meetupItem
-  const mockedMeetupItem = {
+  const item = {
     id: '1',
     category: 'Tech',
     title: 'Learn front-end from scratch',
@@ -19,7 +19,13 @@ describe('The page is rendered', () => {
   };
 
   test('Test so that everything renders properly', async () => {
-    const wrapper = shallowMount(MeetupItem, { store, localVue });
+    const wrapper = shallowMount(MeetupItem, {
+      store,
+      localVue,
+      propsData: {
+        item
+      }
+    });
     expect(wrapper.element).toMatchSnapshot();
   });
 
@@ -28,7 +34,7 @@ describe('The page is rendered', () => {
       store,
       localVue,
       propsData: {
-        mockedMeetupItem
+        item
       }
     });
 
@@ -39,12 +45,12 @@ describe('The page is rendered', () => {
     const meetupLocation = wrapper.find('.meetupLocation');
     const meetupOrganizer = wrapper.find('.meetupOrganizer');
 
-    expect(meetupCategory.text()).toContain(mockedMeetupItem);
-    expect(meetupTitle.text()).toContain(mockedMeetupItem.title);
-    expect(meetupDesc.text()).toContain(mockedMeetupItem.desc);
-    expect(meetupDate.text()).toContain(mockedMeetupItem.date);
-    expect(meetupLocation.text()).toContain(mockedMeetupItem.location);
-    expect(meetupOrganizer.text()).toContain(mockedMeetupItem.organizer);
+    expect(meetupCategory.text()).toContain(item.category);
+    expect(meetupTitle.text()).toContain(item.title);
+    expect(meetupDesc.text()).toContain(item.desc);
+    expect(meetupDate.text()).toContain(item.date);
+    expect(meetupLocation.text()).toContain(item.location);
+    expect(meetupOrganizer.text()).toContain(item.organizer);
   });
 
   test('Check if joinMeetup is displayed if joinMeetupToggle is false', async () => {
@@ -52,7 +58,7 @@ describe('The page is rendered', () => {
       store,
       localVue,
       propsData: {
-        mockedMeetupItem
+        item
       }
     });
 
@@ -67,7 +73,7 @@ describe('The page is rendered', () => {
       store,
       localVue,
       propsData: {
-        mockedMeetupItem
+        item
       }
     });
     store.state.joinMeetupToggle = true;
@@ -101,7 +107,7 @@ describe('The page is rendered', () => {
       store,
       localVue,
       propsData: {
-        mockedMeetupItem
+        item
       }
     });
 
@@ -134,7 +140,7 @@ describe('The page is rendered', () => {
       store,
       localVue,
       propsData: {
-        mockedMeetupItem
+        item
       }
     });
 
