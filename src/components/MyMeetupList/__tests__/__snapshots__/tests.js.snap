@@ -2,6 +2,11 @@
 
 exports[`The page is rendered Test so that everything renders properly 1`] = `
 <div
-  class="myMeetups"
-/>
+  class="myMeetupList"
+>
+  <p>
+    0 Meetups
+  </p>
+   
+</div>
 `;

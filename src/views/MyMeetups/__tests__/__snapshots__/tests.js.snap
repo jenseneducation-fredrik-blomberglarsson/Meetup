@@ -3,5 +3,11 @@
 exports[`The page is rendered Test so that everything renders properly 1`] = `
 <div
   class="myMeetups"
-/>
+>
+  <h1>
+    Attending meetups
+  </h1>
+   
+  <mymeetuplist-stub />
+</div>
 `;
