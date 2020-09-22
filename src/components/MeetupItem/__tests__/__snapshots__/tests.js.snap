@@ -39,5 +39,21 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
   >
     Stockholm WebNow
   </p>
+   
+  <section
+    class="meetupListComponent"
+  >
+    <div
+      class="addMeetup"
+    >
+      <button
+        class="joinMeetupBtn"
+      >
+        Attend
+      </button>
+    </div>
+  </section>
+   
+  <!---->
 </div>
 `;

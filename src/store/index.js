@@ -9,7 +9,9 @@ Vue.use(Vuex)
 //Global state
 export default new Vuex.Store({
   state: {
-    meetups: []
+    meetups: [],
+    joinedMeetups: [],
+    meetupToggle: false
   },
 
 

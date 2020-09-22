@@ -1,11 +1,12 @@
 <template>
   <div class="meetupList">
-    <MeetupItem class="meetupItems" v-for="item in getMeetups" :key="item.id" :item="item" />
+    <MeetupItem class="meetupItems" v-for="meetup in getMeetups" :key="meetup.id" :meetup="meetup" />
   </div>
 </template>
 
 <script>
 import MeetupItem from "../MeetupItem/MeetupItem.vue";
+
 import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
 export default {
@@ -13,10 +14,11 @@ export default {
   components: { MeetupItem },
   computed: mapGetters(["getMeetups"]),
   methods: {
-    ...mapActions(["fetchMeetups"]),
+    ...mapActions(["fetchMeetups", "switchThisMeetupToggle"]),
   },
   mounted() {
     this.fetchMeetups();
+    this.switchThisMeetupToggle(false);
   },
 };
 </script>

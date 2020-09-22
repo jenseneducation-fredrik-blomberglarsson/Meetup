@@ -8,7 +8,7 @@ localVue.use(Vuex);
 
 describe('The page is rendered', () => {
   // Mock meetupItem
-  const item = {
+  const meetup = {
     id: '1',
     category: 'Tech',
     title: 'Learn front-end from scratch',
@@ -23,7 +23,7 @@ describe('The page is rendered', () => {
       store,
       localVue,
       propsData: {
-        item
+        meetup
       }
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -34,7 +34,7 @@ describe('The page is rendered', () => {
       store,
       localVue,
       propsData: {
-        item
+        meetup
       }
     });
 
@@ -45,108 +45,136 @@ describe('The page is rendered', () => {
     const meetupLocation = wrapper.find('.meetupLocation');
     const meetupOrganizer = wrapper.find('.meetupOrganizer');
 
-    expect(meetupCategory.text()).toContain(item.category);
-    expect(meetupTitle.text()).toContain(item.title);
-    expect(meetupDesc.text()).toContain(item.desc);
-    expect(meetupDate.text()).toContain(item.date);
-    expect(meetupLocation.text()).toContain(item.location);
-    expect(meetupOrganizer.text()).toContain(item.organizer);
+    expect(meetupCategory.text()).toContain(meetup.category);
+    expect(meetupTitle.text()).toContain(meetup.title);
+    expect(meetupDesc.text()).toContain(meetup.desc);
+    expect(meetupDate.text()).toContain(meetup.date);
+    expect(meetupLocation.text()).toContain(meetup.location);
+    expect(meetupOrganizer.text()).toContain(meetup.organizer);
   });
 
-  test('Check if joinMeetup is displayed if joinMeetupToggle is false', async () => {
+  test('Check if joinMeetupBtn is displayed if meetupToggle in store is false', async () => {
     const wrapper = shallowMount(MeetupItem, {
       store,
       localVue,
       propsData: {
-        item
+        meetup
       }
     });
 
     const button = wrapper.find('.joinMeetupBtn');
 
-    expect(store.state.joinMeetupToggle).toBe(false);
+    expect(store.state.meetupToggle).toBe(false);
     expect(button.exists()).toBe(true);
   })
 
-  test('Check if leaveMeetup is displayed if joinMeetupToggle is true', async () => {
+  test('Check so that joinMeetupBtn is not displayed if meetupToggle in store is true', async () => {
     const wrapper = shallowMount(MeetupItem, {
       store,
       localVue,
       propsData: {
-        item
+        meetup
       }
     });
-    store.state.joinMeetupToggle = true;
+    store.state.meetupToggle = true;
     await wrapper.vm.$nextTick();
     const button = wrapper.find('.joinMeetupBtn');
 
-    expect(store.state.joinMeetupToggle).toBe(true);
+    expect(store.state.meetupToggle).toBe(true);
+    expect(button.exists()).toBe(false);
+  })
+
+  test('Check if removeMeetupBtn is displayed if meetupToggle in store is true', async () => {
+    const wrapper = shallowMount(MeetupItem, {
+      store,
+      localVue,
+      propsData: {
+        meetup
+      }
+    });
+    store.state.meetupToggle = true;
+
+    const button = wrapper.find('.removeMeetupBtn');
+
+    expect(store.state.meetupToggle).toBe(true);
     expect(button.exists()).toBe(true);
   })
 
-  test('Check that joinMeetup is called on button click', async () => {
-    const state = {
-      isMeetupToggleActive: false
-    }
-
-    const actions = {
-      joinMeetup: jest.fn()
-    };
-    const getters = {
-      getMeetupToggle: state => {
-        return state.isMeetupToggleActive;
-      }
-    };
-    const store = new Vuex.Store({
-      actions,
-      getters,
-      state
-    });
-
+  test('Check so that removeMeetupBtn is not displayed if meetupToggle in store is false', async () => {
     const wrapper = shallowMount(MeetupItem, {
       store,
       localVue,
       propsData: {
-        item
+        meetup
       }
     });
 
-    const button = wrapper.find('.joinMeetupBtn');
-    await button.trigger('click');
-    await localVue.nextTick();
-    expect(actions.joinMeetup).toHaveBeenCalled();
-  })
+    store.state.meetupToggle = false;
+    await wrapper.vm.$nextTick();
+    const button = wrapper.find('.removeMeetupBtn');
 
-  test('Check that leaveMeetup is called on button click', async () => {
-    const state = {
-      isMeetupToggleActive: true
-    }
+    expect(store.state.meetupToggle).toBe(false);
+    expect(button.exists()).toBe(false);
+  });
+
+  test('Check that addMeetup from store is called on button click', async () => {
 
     const actions = {
-      leaveMeetup: jest.fn()
+      addThisMeetup: jest.fn()
     };
     const getters = {
       getMeetupToggle: state => {
-        return state.isMeetupToggleActive;
+        return state.meetupToggle;
       }
     };
     const store = new Vuex.Store({
-      actions,
       getters,
-      state
+      actions
     });
-
     const wrapper = shallowMount(MeetupItem, {
       store,
       localVue,
       propsData: {
-        item
+        meetup
       }
     });
 
-    const button = wrapper.find('.joinMeetupBtn');
+    const button = wrapper.find('.addMeetup');
     await button.trigger('click');
     await localVue.nextTick();
-    expect(actions.leaveMeetup).toHaveBeenCalled();
+
+    expect(actions.addThisMeetup).toHaveBeenCalled();
+  });
+
+  test('Check that removeMeetup from store is called on button click', async () => {
+    const state = {
+      meetupToggle: true
+    }
+    const actions = {
+      removeThisMeetup: jest.fn()
+    };
+    const getters = {
+      getMeetupToggle: state => {
+        return state.meetupToggle;
+      }
+    };
+    const store = new Vuex.Store({
+      state,
+      getters,
+      actions
+    });
+    const wrapper = shallowMount(MeetupItem, {
+      store,
+      localVue,
+      propsData: {
+        meetup
+      }
+    });
+
+    const button = wrapper.find('.removeMeetup');
+    await button.trigger('click');
+    await localVue.nextTick();
+
+    expect(actions.removeThisMeetup).toHaveBeenCalled();
   })
-})
+}) 
