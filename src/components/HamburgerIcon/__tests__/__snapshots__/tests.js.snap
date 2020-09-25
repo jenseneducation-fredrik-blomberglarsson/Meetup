@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hamburger button is pressed Test so that everything renders properly 1`] = `
+<div
+  class="hamburgerIcon"
+>
+  <nav
+    class="burgerBtn"
+  >
+    <img
+      alt="burgerIconImg"
+      class="burgerIconImg"
+      src="../../assets/navicon.svg"
+    />
+     
+    <hamburgermenu-stub />
+  </nav>
+</div>
+`;

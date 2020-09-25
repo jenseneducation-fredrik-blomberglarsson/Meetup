@@ -165,6 +165,4 @@ function getPreviousMeetups() {
   ]
 }
 
-// Göra en review array som jag pushar previousMeetup in i (?)
-
 export { getMeetups, getPreviousMeetups }

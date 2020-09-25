@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu is opened Test so that everything renders properly 1`] = `
+<nav
+  class="hamburgerMenu"
+>
+  <img
+    alt="close"
+    class="closeBtn"
+    src="../../assets/close.svg"
+  />
+   
+  <router-link-stub
+    ariacurrentvalue="page"
+    class="router-link"
+    event="click"
+    tag="a"
+    to="/"
+  >
+    Home
+  </router-link-stub>
+   
+  <hr
+    class="hr"
+  />
+   
+  <router-link-stub
+    ariacurrentvalue="page"
+    class="router-link"
+    event="click"
+    tag="a"
+    to="/meetups"
+  >
+    Upcoming Meetups
+  </router-link-stub>
+   
+  <hr
+    class="hr"
+  />
+   
+  <router-link-stub
+    ariacurrentvalue="page"
+    class="router-link"
+    event="click"
+    tag="a"
+    to="/mymeetups"
+  >
+    My Meetups
+  </router-link-stub>
+</nav>
+`;

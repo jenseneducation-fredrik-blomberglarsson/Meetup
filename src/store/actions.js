@@ -18,6 +18,9 @@ const actions = {
   switchThisMeetupToggle(context, boolean) {
     context.commit('switchMeetupToggle', boolean);
   },
+  changeThisBurgerToggle(context) {
+    context.commit('toggleBurger');
+  }
 
 }
 
