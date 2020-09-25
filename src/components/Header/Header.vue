@@ -1,16 +1,16 @@
 <template>
   <div class="header">
-    <div id="nav">
-      <router-link to="/" class="router-link">Home</router-link>|
-      <router-link to="/meetups" class="router-link">Upcoming Meetups</router-link>
-      <router-link to="/mymeetups" class="router-link">My Meetups</router-link>
-    </div>
+    <HamburgerIcon />
   </div>
 </template>
 
 <script>
+import HamburgerIcon from "@/components/HamburgerIcon/HamburgerIcon.vue";
 export default {
   name: "Header",
+  components: {
+    HamburgerIcon,
+  },
 };
 </script>
 

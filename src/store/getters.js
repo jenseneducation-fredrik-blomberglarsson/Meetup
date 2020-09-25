@@ -10,6 +10,9 @@ const getters = {
   },
   getMeetupToggle: state => {
     return state.meetupToggle;
+  },
+  getBurgerToggle: state => {
+    return state.burgerToggle;
   }
 }
 

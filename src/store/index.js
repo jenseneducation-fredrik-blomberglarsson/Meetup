@@ -13,6 +13,7 @@ export default new Vuex.Store({
     joinedMeetups: [],
     previousMeetups: [],
     meetupToggle: false,
+    burgerToggle: false
   },
 
   actions: actions,

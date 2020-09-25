@@ -32,6 +32,9 @@ const mutations = {
   switchMeetupToggle(state, boolean) {
     state.meetupToggle = boolean;
   },
+  toggleBurger(state) {
+    state.burgerToggle = !state.burgerToggle;
+  }
 }
 
 
