@@ -11,12 +11,9 @@ export default new Vuex.Store({
   state: {
     meetups: [],
     joinedMeetups: [],
-    meetupToggle: false
+    previousMeetups: [],
+    meetupToggle: false,
   },
-
-
-
-
 
   actions: actions,
   mutations: mutations,

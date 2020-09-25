@@ -25,13 +25,15 @@ const mutations = {
     state.joinedMeetups.splice(index, 1);
   },
 
-
-
-
+  setPreviousMeetups(state, previousMeetups) {
+    state.previousMeetups = previousMeetups;
+  },
 
   switchMeetupToggle(state, boolean) {
     state.meetupToggle = boolean;
-  }
+  },
 }
+
+
 
 export default mutations;

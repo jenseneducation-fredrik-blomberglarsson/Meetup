@@ -142,4 +142,29 @@ function getMeetups() {
   ]
 }
 
-export { getMeetups }
+function getPreviousMeetups() {
+  return [
+    {
+      id: '01',
+      category: 'Film',
+      title: 'Movie marathon',
+      desc: 'Watch different movies online with film enthusiasts',
+      date: 'This meetup has passed',
+      location: 'Online',
+      organizer: 'Stockholm Film',
+    },
+    {
+      id: '02',
+      category: 'Gaming',
+      title: 'Classic Retro Gaming',
+      desc: 'Enjoy classic retro games with our community!',
+      date: 'This meetup has passed',
+      location: 'Online',
+      organizer: 'Retro Lovers',
+    },
+  ]
+}
+
+// Göra en review array som jag pushar previousMeetup in i (?)
+
+export { getMeetups, getPreviousMeetups }

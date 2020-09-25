@@ -1,4 +1,4 @@
-import { shallowMount, mount, createLocalVue } from '@vue/test-utils';
+import { shallowMount, mount, createLocalVue, RouterLinkStub } from '@vue/test-utils';
 import Vuex from 'vuex';
 import store from '../../../store/index.js';
 import Header from '@/components/Header/Header.vue';
@@ -13,4 +13,14 @@ describe('The page is rendered', () => {
     const wrapper = shallowMount(Header, { store, localVue });
     expect(wrapper.element).toMatchSnapshot();
   })
+  test('testing if router-link for front-page exists in component Header', () => {
+    const wrapper = mount(Header, {
+      store,
+      localVue,
+      stubs: {
+        RouterLink: RouterLinkStub
+      }
+    });
+    expect(wrapper.findComponent(RouterLinkStub).props().to).toBe('/');
+  });
 })
