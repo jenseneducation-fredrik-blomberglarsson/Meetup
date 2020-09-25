@@ -5,6 +5,9 @@ const getters = {
   getJoinedMeetups: state => {
     return state.joinedMeetups;
   },
+  getPreviousMeetups: state => {
+    return state.previousMeetups;
+  },
   getMeetupToggle: state => {
     return state.meetupToggle;
   }

@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The page is rendered Test so that everything renders properly 1`] = `
+<div
+  class="previousMeetupItem"
+>
+  <h3
+    class="previousMeetupCategory"
+  >
+    Film
+  </h3>
+   
+  <h2
+    class="previousMeetupTitle"
+  >
+    Movie marathon
+  </h2>
+   
+  <p
+    class="previousMeetupDesc"
+  >
+    Watch different movies online with film enthusiasts
+  </p>
+   
+  <p
+    class="previousMeetupDate"
+  >
+    This meetup has passed
+  </p>
+   
+  <p
+    class="previousMeetupLocation"
+  >
+    Online
+  </p>
+   
+  <p
+    class="previousMeetupOrganizer"
+  >
+    Stockholm Film
+  </p>
+   
+  <div
+    class="createReview"
+  >
+    <button
+      class="createReviewBtn"
+    >
+      Create a review!
+    </button>
+     
+    <div
+      class="createReviewForm"
+      style="display: none;"
+    >
+      <section
+        class="form-group"
+      >
+        <h3
+          class="meetupTitle"
+        >
+          Submit a review for Movie marathon
+        </h3>
+         
+        <label
+          for="name"
+        >
+          Name
+        </label>
+         
+        <input
+          class="form-control"
+          placeholder="Your name"
+          type="text"
+        />
+      </section>
+       
+      <section
+        class="form-group"
+      >
+        <label
+          for="satisfaction"
+        >
+          How did you experience this meetup? (10 for best, 1 for worst)
+        </label>
+         
+        <input
+          class="form-control"
+          id="satisfaction"
+          max="10"
+          min="1"
+          placeholder="1-10"
+          type="number"
+        />
+      </section>
+       
+      <section
+        class="form-group"
+      >
+        <label
+          for="message"
+        >
+          Your review
+        </label>
+         
+        <textarea
+          class="form-control"
+          id="message"
+          placeholder="Describe your review..."
+          rows="5"
+        />
+      </section>
+       
+      <button
+        class="submitReview"
+      >
+        Submit!
+      </button>
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;

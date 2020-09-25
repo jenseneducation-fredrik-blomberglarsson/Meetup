@@ -1,9 +1,13 @@
-import { getMeetups } from "../data/meetupData";
+import { getMeetups, getPreviousMeetups } from "../data/meetupData";
 
 const actions = {
   async fetchMeetups(context) {
     const data = await getMeetups();
     context.commit("setMeetups", data);
+  },
+  async fetchPreviousMeetups(context) {
+    const data = await getPreviousMeetups();
+    context.commit("setPreviousMeetups", data)
   },
   addThisMeetup(context, meetup) {
     context.commit('addMeetup', meetup);
@@ -13,13 +17,8 @@ const actions = {
   },
   switchThisMeetupToggle(context, boolean) {
     context.commit('switchMeetupToggle', boolean);
-  }
+  },
 
-
-
-  /*   isBtnVisible(context) {
-      context.commit('isVisible');
-    } */
 }
 
 export default actions;

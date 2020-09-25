@@ -7,6 +7,14 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
   <p>
     0 Meetups
   </p>
+    
+  <hr
+    class="hr"
+  />
+   
+  <h1>
+    Previous Meetups
+  </h1>
    
 </div>
 `;
