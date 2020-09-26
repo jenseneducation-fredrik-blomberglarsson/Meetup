@@ -27,12 +27,10 @@ export default {
 </script>
 
 <style scoped>
-.burgerBtn {
+.burgerIconImg {
   cursor: pointer;
-  background: #ffeb3b;
-  width: 1.5em;
+  width: 2rem;
   padding: 1rem;
-  border-radius: 50px;
   display: flex;
   justify-content: center;
 }
