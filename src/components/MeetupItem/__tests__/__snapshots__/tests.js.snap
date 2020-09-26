@@ -4,56 +4,72 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
 <div
   class="meetupItem"
 >
-  <h3
-    class="meetupCategory"
-  >
-    Tech
-  </h3>
-   
-  <h2
-    class="meetupTitle"
-  >
-    Learn front-end from scratch
-  </h2>
-   
-  <p
-    class="meetupDesc"
-  >
-    Learn front-end development with experienced developers
-  </p>
-   
-  <p
-    class="meetupDate"
-  >
-    WED, SEP 23 6:30 PM
-  </p>
-   
-  <p
-    class="meetupLocation"
-  >
-    Online
-  </p>
-   
-  <p
-    class="meetupOrganizer"
-  >
-    Stockholm WebNow
-  </p>
-   
-  <section
-    class="meetupListComponent"
+  <div
+    class="meetupItemContainer"
   >
     <div
-      class="addMeetup"
+      class="meetupCard"
     >
-      <button
-        class="joinMeetupBtn"
+      <div
+        class="headerContainer"
       >
-        Attend
-      </button>
+        <h3
+          class="meetupCategory"
+        >
+          Tech
+        </h3>
+         
+        <h2
+          class="meetupTitle"
+        >
+          Learn front-end from scratch
+        </h2>
+      </div>
+       
+      <div
+        class="content"
+      >
+        <p
+          class="meetupDesc"
+        >
+          Learn front-end development with experienced developers
+        </p>
+         
+        <p
+          class="meetupDate"
+        >
+          WED, SEP 23 6:30 PM
+        </p>
+         
+        <p
+          class="meetupLocation"
+        >
+          Online
+        </p>
+         
+        <p
+          class="meetupOrganizer"
+        >
+          Stockholm WebNow
+        </p>
+         
+        <section
+          class="meetupListComponent"
+        >
+          <div
+            class="addMeetup"
+          >
+            <button
+              class="joinMeetupBtn"
+            >
+              Attend
+            </button>
+          </div>
+        </section>
+         
+        <!---->
+      </div>
     </div>
-  </section>
-   
-  <!---->
+  </div>
 </div>
 `;
