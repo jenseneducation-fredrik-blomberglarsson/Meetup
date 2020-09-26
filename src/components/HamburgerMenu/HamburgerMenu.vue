@@ -32,9 +32,7 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 .hamburgerMenu {
-  font-family: "Permanent Marker", cursive;
   height: 100vh;
   width: 100%;
   position: fixed;
