@@ -4,6 +4,17 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
 <div
   class="header"
 >
+  <img
+    class="meetupLogo"
+    src="@/assets/meetuplogo.jpg"
+  />
+   
+  <h1
+    class="meetupsHeader"
+  >
+    Meetups
+  </h1>
+   
   <hamburgericon-stub />
 </div>
 `;

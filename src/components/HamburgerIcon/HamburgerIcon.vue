@@ -26,5 +26,14 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.burgerBtn {
+  cursor: pointer;
+  background: #ffeb3b;
+  width: 1.5em;
+  padding: 1rem;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+}
 </style>
