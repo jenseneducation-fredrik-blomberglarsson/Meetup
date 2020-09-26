@@ -17,7 +17,10 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
       Meetups of every kind
     </h1>
      
-    <router-link
+    <router-link-stub
+      ariacurrentvalue="page"
+      event="click"
+      tag="a"
       to="/meetups"
     >
       <button
@@ -25,7 +28,7 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
       >
         Join Meetup
       </button>
-    </router-link>
+    </router-link-stub>
   </section>
    
   <section
