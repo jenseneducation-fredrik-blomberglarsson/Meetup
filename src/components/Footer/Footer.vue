@@ -13,14 +13,12 @@ export default {};
 <style scoped>
 div {
   background-color: black;
-  text-align: center;
 }
 footer {
   font-family: "Raleway", sans-serif;
-  background: red;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 1rem;
+  bottom: 0;
 }
 </style>

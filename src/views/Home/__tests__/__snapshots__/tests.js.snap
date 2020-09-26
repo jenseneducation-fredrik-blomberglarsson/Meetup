@@ -4,10 +4,52 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
 <div
   class="home"
 >
-  <p
-    class="test"
+  <hr
+    class="hr"
+  />
+   
+  <section
+    class="heroContainer"
   >
-    TEST THAT EVERYTHING WORKS
-  </p>
+    <h1
+      class="descHeader"
+    >
+      Meetups of every kind
+    </h1>
+     
+    <router-link
+      to="/meetups"
+    >
+      <button
+        class="joinMeetupBtn"
+      >
+        Join Meetup
+      </button>
+    </router-link>
+  </section>
+   
+  <section
+    class="informationContainer"
+  >
+    <p
+      class="infoParagraph"
+    >
+      
+      Meetups is a platform for finding and building local communities.
+      
+      <br />
+      People use Meetups to meet new people,
+      
+      <br />
+      learn new things, find support,
+      
+      <br />
+      get out of their comfort zones,
+      
+      <br />
+      and pursue their passions, together.
+    
+    </p>
+  </section>
 </div>
 `;

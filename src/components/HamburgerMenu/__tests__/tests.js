@@ -135,12 +135,6 @@ describe('Menu is opened', () => {
     expect(actions.changeThisBurgerToggle).toHaveBeenCalled();
   })
 
-
-
-
-
-
-
   test('test if router-link for front-page exists in component HamburgerMenu', () => {
     const state = {
       toggleBurger: true
