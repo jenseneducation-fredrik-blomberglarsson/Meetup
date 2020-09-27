@@ -64,7 +64,7 @@ export default {
   font-family: "Permanent Marker", cursive;
   color: #fff;
   position: absolute;
-  top: 55%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 200px;

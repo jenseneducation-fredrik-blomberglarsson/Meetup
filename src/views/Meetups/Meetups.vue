@@ -16,8 +16,6 @@ export default {
 </script>
 
 <style>
-body {
-}
 .meetups {
   width: 100%;
 }

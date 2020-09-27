@@ -4,16 +4,32 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
 <div
   class="header"
 >
-  <img
-    class="meetupLogo"
-    src="@/assets/meetuplogo.jpg"
-  />
-   
-  <h1
-    class="meetupsHeader"
+  <router-link-stub
+    ariacurrentvalue="page"
+    class="router-link"
+    event="click"
+    tag="a"
+    to="/"
   >
-    Meetups
-  </h1>
+    <img
+      class="meetupLogo"
+      src="@/assets/meetuplogo.jpg"
+    />
+  </router-link-stub>
+   
+  <router-link-stub
+    ariacurrentvalue="page"
+    class="router-link"
+    event="click"
+    tag="a"
+    to="/"
+  >
+    <h1
+      class="meetupsHeader"
+    >
+      Meetups
+    </h1>
+  </router-link-stub>
    
   <hamburgericon-stub />
 </div>

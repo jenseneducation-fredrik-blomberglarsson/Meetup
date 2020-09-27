@@ -1,7 +1,11 @@
 <template>
   <div class="header">
-    <img class="meetupLogo" src="@/assets/meetuplogo.jpg" />
-    <h1 class="meetupsHeader">Meetups</h1>
+    <router-link class="router-link" to="/">
+      <img class="meetupLogo" src="@/assets/meetuplogo.jpg" />
+    </router-link>
+    <router-link class="router-link" to="/">
+      <h1 class="meetupsHeader">Meetups</h1>
+    </router-link>
     <HamburgerIcon />
   </div>
 </template>
@@ -18,6 +22,10 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+.router-link {
+  text-decoration: none;
+}
+
 .header {
   display: flex;
   justify-content: space-around;
