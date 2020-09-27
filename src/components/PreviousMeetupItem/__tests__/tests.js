@@ -100,4 +100,5 @@ describe('The page is rendered', () => {
     await button.trigger('click');
     expect(wrapper.vm.submitted).toHaveBeenCalled();
   })
+
 })

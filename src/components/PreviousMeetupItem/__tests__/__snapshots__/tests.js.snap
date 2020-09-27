@@ -4,50 +4,66 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
 <div
   class="previousMeetupItem"
 >
-  <h3
-    class="previousMeetupCategory"
-  >
-    Film
-  </h3>
-   
-  <h2
-    class="previousMeetupTitle"
-  >
-    Movie marathon
-  </h2>
-   
-  <p
-    class="previousMeetupDesc"
-  >
-    Watch different movies online with film enthusiasts
-  </p>
-   
-  <p
-    class="previousMeetupDate"
-  >
-    This meetup has passed
-  </p>
-   
-  <p
-    class="previousMeetupLocation"
-  >
-    Online
-  </p>
-   
-  <p
-    class="previousMeetupOrganizer"
-  >
-    Stockholm Film
-  </p>
-   
   <div
-    class="createReview"
+    class="previousMeetupItemContainer"
   >
-    <button
-      class="createReviewBtn"
+    <div
+      class="previousMeetupCard"
     >
-      Create a review!
-    </button>
+      <div
+        class="headerContainer"
+      >
+        <h3
+          class="previousMeetupCategory"
+        >
+          Film
+        </h3>
+         
+        <h2
+          class="previousMeetupTitle"
+        >
+          Movie marathon
+        </h2>
+      </div>
+       
+      <div
+        class="content"
+      >
+        <p
+          class="previousMeetupDesc"
+        >
+          Watch different movies online with film enthusiasts
+        </p>
+         
+        <p
+          class="previousMeetupDate"
+        >
+          This meetup has passed
+        </p>
+         
+        <p
+          class="previousMeetupLocation"
+        >
+          Online
+        </p>
+         
+        <p
+          class="previousMeetupOrganizer"
+        >
+          Stockholm Film
+        </p>
+         
+        <div
+          class="createReview"
+        >
+          <button
+            class="createReviewBtn"
+          >
+            Create a review!
+          </button>
+        </div>
+      </div>
+    </div>
      
     <div
       class="createReviewForm"
@@ -62,15 +78,9 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
           Submit a review for Movie marathon
         </h3>
          
-        <label
-          for="name"
-        >
-          Name
-        </label>
-         
         <input
           class="form-control"
-          placeholder="Your name"
+          placeholder="Name..."
           type="text"
         />
       </section>
@@ -81,7 +91,12 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
         <label
           for="satisfaction"
         >
-          How did you experience this meetup? (10 for best, 1 for worst)
+          
+          How did you experience this meetup?
+          
+          <br />
+          (10 for best, 1 for worst)
+        
         </label>
          
         <input
@@ -97,12 +112,6 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
       <section
         class="form-group"
       >
-        <label
-          for="message"
-        >
-          Your review
-        </label>
-         
         <textarea
           class="form-control"
           id="message"
