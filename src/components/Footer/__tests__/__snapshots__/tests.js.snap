@@ -6,7 +6,7 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
 >
   <footer>
     <p>
-      Lorem ipsum
+      © 2020 Copyright: bl-meetup.herokuapp.com
     </p>
   </footer>
 </div>

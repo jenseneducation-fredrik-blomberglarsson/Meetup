@@ -48,11 +48,12 @@
             class="form-control"
             v-model="reviewData.message"
           ></textarea>
+          <button class="submitReview" @click.prevent="submitted(); toggleReview();">Submit!</button>
         </section>
-        <button class="submitReview" @click.prevent="submitted(); toggleReview();">Submit!</button>
       </div>
       <div class="displayReview" v-if="isSubmitted">
         <div class="displayReviewBody">
+          <h3 class="meetupTitle">Review for {{previousMeetup.title}}</h3>
           <p class="reviewName">
             Name:
             <b>{{ reviewData.name }}</b>
@@ -61,9 +62,9 @@
             Satisfaction:
             <b>{{ reviewData.satisfaction }}</b>
           </p>
-          <p class="reviewMessage" style="white-space: pre">
-            Message:
-            <b>{{ reviewData.review }}</b>
+          <p class="reviewMessage">
+            Review:
+            <b>{{ reviewData.message }}</b>
           </p>
         </div>
       </div>
@@ -83,7 +84,7 @@ export default {
       reviewData: {
         name: "",
         satisfaction: "",
-        review: "",
+        message: "",
       },
       isSubmitted: false,
     };
@@ -100,11 +101,75 @@ export default {
 </script>
 
 <style scoped>
+.displayReviewBody {
+  background-color: #fff;
+  border: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+  text-align: center;
+  margin-bottom: 5%;
+  max-width: 300px;
+  word-wrap: break-word;
+  text-align: left;
+  border-radius: 25px;
+}
+
+.reviewMessage {
+}
+
+.createReviewBtn {
+  font-family: "Permanent Marker", cursive;
+  color: #03a9f4;
+  background-color: #d6d2d2;
+  cursor: pointer;
+}
 .createReviewForm {
-  margin-left: 5%;
+  margin-left: 1%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 3%;
+}
+
+.form-group {
+  background-color: #fff;
+  border: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+input {
+  margin-bottom: 0.5rem;
+}
+
+#satisfaction {
+  margin-top: 5%;
+  width: 50%;
+  align-self: center;
+}
+
+.submitReview {
+  margin-top: 5%;
+  width: 50%;
+  align-self: center;
+  font-family: "Permanent Marker", cursive;
+  color: #03a9f4;
+  background-color: #d6d2d2;
+  width: 100px;
+  height: 30px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
 }
 
 div {

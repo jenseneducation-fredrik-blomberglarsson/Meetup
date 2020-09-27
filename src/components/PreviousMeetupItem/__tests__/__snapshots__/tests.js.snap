@@ -118,13 +118,13 @@ exports[`The page is rendered Test so that everything renders properly 1`] = `
           placeholder="Describe your review..."
           rows="5"
         />
+         
+        <button
+          class="submitReview"
+        >
+          Submit!
+        </button>
       </section>
-       
-      <button
-        class="submitReview"
-      >
-        Submit!
-      </button>
     </div>
      
     <!---->

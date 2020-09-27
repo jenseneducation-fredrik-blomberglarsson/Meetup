@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <footer>
-      <p>Lorem ipsum</p>
+      <p>© 2020 Copyright: bl-meetup.herokuapp.com</p>
     </footer>
   </div>
 </template>

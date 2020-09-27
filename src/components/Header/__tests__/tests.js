@@ -13,4 +13,15 @@ describe('The page is rendered', () => {
     const wrapper = shallowMount(Header, { store, localVue });
     expect(wrapper.element).toMatchSnapshot();
   })
+
+  test('test if router-link for Frontpage exists in Header component', () => {
+    const wrapper = mount(Header, {
+      store,
+      localVue,
+      stubs: {
+        RouterLink: RouterLinkStub
+      }
+    });
+    expect(wrapper.findComponent(RouterLinkStub).props().to).toBe('/');
+  });
 })
